@@ -1,0 +1,50 @@
+/* Estilo para el tablero */
+table {
+    border-collapse: collapse; /* Elimina los espacios entre las celdas */
+}
+
+/* Estilo para cada celda */
+td {
+    border: #eee solid 1px;  /* Borde gris claro alrededor de cada celda */
+    width: 10px; /* Define el tamaño de las celdas */
+    height: 10px; /* Define el tamaño de las celdas */
+}
+
+/* Estilo para el botón flotante */
+.contenedor-boton-flotante {
+    width: 90px;
+    height: 90px;
+    position: fixed; /* Cambiar a fixed para que el botón sea realmente flotante */
+    right: 0px;
+    bottom: 0px;
+}
+
+.botonF1 {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    background: #F44336;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin-right: 16px;
+    margin-bottom: 16px;
+    border: none;
+    outline: none;
+    color: #FFF;
+    font-size: 36px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    transition: .3s;
+}
+
+.botonF1 span {
+    transition: .5s;
+}
+
+.botonF1:hover span {
+    transform: rotate(360deg);
+}
+
+.botonF1:active {
+    transform: scale(1.4);
+}
