@@ -3,6 +3,9 @@ export class UI {
     constructor(game, containerId) {
         this.game = game;
         this.container = document.getElementById(containerId); // Contenedor del tablero
+        this.isPlaying = false; // Estado de la reproducción automática
+        this.intervalId = null; // ID del intervalo de reproducción
+        this.speed = 1000; // Velocidad inicial (ms)
         this.initBoard(); // Inicializar el tablero
         this.addEventListeners();// Agregar los eventos
     }
@@ -54,5 +57,79 @@ export class UI {
             this.game.nextState(); // Calcula el siguiente estado del juego
             this.updateBoard(); // Actualiza el tablero visual
         });
+
+        // Evento para el botón de reproducción/pausa
+        const playPauseButton = document.getElementById('playPauseButton');
+        playPauseButton.addEventListener('click', () => {
+            if (this.isPlaying) {
+                this.pause(); // Pausar la reproducción automática
+            } else {
+                this.play(); // Iniciar la reproducción automática
+            }
+        });
+
+        // Evento para los botones de velocidad
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', (event) => {
+                this.setSpeed(button.innerText);
+                document.querySelectorAll('.btn').forEach(btn => btn.classList.remove('selected'));
+                button.classList.add('selected');
+            });
+        });
+
+        // Mostrar los botones de velocidad al pasar el mouse sobre el botón principal
+        document.querySelector('#contenedor-boton-flotante-playPause-velocidades').addEventListener('mouseover', () => {
+            document.querySelectorAll('.btn').forEach(button => button.classList.add('animacionVer'));
+        });
+
+        // Ocultar los botones de velocidad cuando el mouse sale del contenedor
+        document.querySelector('.contenedor-boton-flotante').addEventListener('mouseleave', () => {
+            document.querySelectorAll('.btn').forEach(button => button.classList.remove('animacionVer'));
+        });
+    }
+
+    // Método para establecer la velocidad de reproducción
+    setSpeed(speed) {
+        switch (speed) {
+            case 'x1':
+                this.speed = 1000;
+                break;
+            case 'x2':
+                this.speed = 500;
+                break;
+            case 'x3':
+                this.speed = 250;
+                break;
+            case 'x4':
+                this.speed = 125;
+                break;
+        }
+
+        if (this.isPlaying) {
+            this.pause();
+            this.play();
+        }
+    }
+
+    // Método para establecer el botón de velocidad inicial
+    setInitialSpeedButton() {
+        document.getElementById('speed1x').classList.add('selected');
+    }
+
+    // Método para iniciar la reproducción automática
+    play() {
+        this.isPlaying = true;
+        document.getElementById('playPauseButton').innerHTML = '<i class="fas fa-pause"></i>'; // Cambiar el icono a pausa
+        this.intervalId = setInterval(() => {
+            this.game.nextState();
+            this.updateBoard();
+        }, this.speed); // Ejecutar cada X ms 
+    }
+
+    // Método para pausar la reproducción automática
+    pause() {
+        this.isPlaying = false;
+        document.getElementById('playPauseButton').innerHTML = '<i class="fas fa-play"></i>'; // Cambiar el icono a reproducción
+        clearInterval(this.intervalId);
     }
 }

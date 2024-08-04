@@ -1,6 +1,7 @@
 /* Estilo para el tablero */
 table {
     border-collapse: collapse; /* Elimina los espacios entre las celdas */
+    margin: auto; /* Centrar horizontalmente */
 }
 
 /* Estilo para cada celda */
@@ -12,13 +13,14 @@ td {
 
 /* Estilo para el botón flotante */
 .contenedor-boton-flotante {
-    width: 90px;
-    height: 90px;
+    width: 240px;
+    height: 90px;  /* Ajustar la altura para acomodar dos botones */
     position: fixed; /* Cambiar a fixed para que el botón sea realmente flotante */
     right: 0px;
     bottom: 0px;
 }
 
+/* Estilo para los botones flotantes */
 .botonF1 {
     width: 60px;
     height: 60px;
@@ -32,19 +34,72 @@ td {
     border: none;
     outline: none;
     color: #FFF;
-    font-size: 36px;
+    font-size: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: .3s;
 }
 
-.botonF1 span {
+#nextGenerationButton {
+    bottom: 80px; /* Mover el botón hacia arriba para dejar espacio para el segundo botón */
+}
+
+.botonF1 span, .botonF1 i {
     transition: .5s;
 }
 
-.botonF1:hover span {
+/* .botonF1:hover span, .botonF1:hover i {
     transform: rotate(360deg);
-}
+} */
 
 .botonF1:active {
     transform: scale(1.4);
+}
+
+/* Estilo para los botones de velocidad */
+.btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    border: none;
+    color: #FFF;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    font-size: 20px;
+    outline: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-bottom: 26px;
+    transform: scale(0);
+}
+
+.botonF2, .botonF3, .botonF4, .botonF5 {
+    background: #2196F3;
+}
+
+.botonF2 {
+    margin-right: 85px;
+    transition: 0.3s;
+}
+
+.botonF3 {
+    margin-right: 130px;
+    transition: 0.45s;
+}
+
+.botonF4 {
+    margin-right: 175px;
+    transition: 0.6s;
+}
+
+.botonF5 {
+    margin-right: 220px;
+    transition: 0.75s;
+}
+
+.selected {
+    background: #F44336 !important;
+}
+
+.animacionVer {
+    transform: scale(1);
 }
