@@ -1,6 +1,8 @@
 # 🌟 Conway's Game of Life 🌟
 
-¡Bienvenido al juego de la vida de Conway! Un juego fascinante que simula la evolución de una colonia de células autonomas que basan su comportamiento en 4 simples reglas.
+¡Bienvenido al juego de la vida de Conway! Un juego fascinante que simula la evolución de una colonia de células autonomas que basan su comportamiento en 4 simples reglas. 
+
+Puedes acceder al simulador usando el siguiente enlace: https://juliandgp.github.io/GameOfLife/
 
 ## 🚀 Descripción del Proyecto
 
@@ -29,7 +31,7 @@ El juego de la vida de Conway sigue cuatro reglas simples que determinan el dest
 
 Estas reglas se aplican a todas las células simultáneamente, lo que produce patrones de crecimiento y declive fascinantes y complejos.
 
-<img src="./assets/readme%20assets/Ejemplos.png" alt="Vista previa del Juego de la Vida" width="35%">
+<img src="./assets/readme%20assets/Ejemplos.png" alt="Vista previa del Juego de la Vida" width="40%">
 
 ## 🎲Patrones
 
@@ -40,7 +42,7 @@ Aqui se muestran algunos patrones de ejemplo.
 
 ## 🎮 Cómo Jugar
 
-1. 🕹️ **Ve a la pagina web**: www.
+1. 🕹️ **Ve a la pagina web**: https://juliandgp.github.io/GameOfLife/
 2. 🖱️ **Interfaz Interactiva**: Haz click izquierdo es las celdas de la cuadricula para activarlas o desactivarlas.
 3. ▶️ **Iniciar/Pausar**: Controla la simulación con el botón de siguiente generacion.
 4. ⏭️ **Avance Paso a Paso**: Avanza la simulación paso a paso para ver la evolución lentamente.
