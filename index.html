@@ -14,10 +14,27 @@
     <!-- Contenedor donde se mostrará el tablero del juego -->
     <div id="contenedor"></div>
     <!-- Botón flotante para cambiar a la siguiente generación -->
-    <div class="contenedor-boton-flotante">
+    <div id="contenedor-boton-flotante" class="contenedor-boton-flotante">
         <button class="botonF1" id="nextGenerationButton">
-            <i class="fas fa-arrow-right"></i>
+            <i class="fas fa-step-forward"></i>
         </button>
+    <div id="contenedor-boton-flotante-playPause-velocidades">
+        <button class="botonF1" id="playPauseButton">
+            <i class="fas fa-play"></i>
+        </button>
+        <button class="btn botonF2" id="speed1x">
+            <span>x1</span>
+        </button>
+        <button class="btn botonF3" id="speed2x">
+            <span>x2</span>
+        </button>
+        <button class="btn botonF4" id="speed3x">
+            <span>x3</span>
+        </button>
+        <button class="btn botonF5" id="speed4x">
+            <span>x4</span>
+        </button>
+    </div>
     </div>
     <!-- Enlace al archivo JS externo que inicializa y controla el juego -->
     <script type="module" src="js/main.js"></script>
