@@ -7,9 +7,10 @@ table {
 /* Estilo para cada celda */
 td {
     border: #eee solid 1px;  /* Borde gris claro alrededor de cada celda */
-    width: 10px; /* Define el tamaño de las celdas */
-    height: 10px; /* Define el tamaño de las celdas */
+    min-width: 15px; /* Define el tamaño de las celdas */
+    height: 15px; /* Define el tamaño de las celdas */
 }
+
 
 /* Estilo para el botón flotante */
 .contenedor-boton-flotante {
