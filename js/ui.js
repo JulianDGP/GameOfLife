@@ -86,8 +86,32 @@ export class UI {
         document.querySelector('.contenedor-boton-flotante').addEventListener('mouseleave', () => {
             document.querySelectorAll('.btn').forEach(button => button.classList.remove('animacionVer'));
         });
+
+        // Evento para el botón de limpiar
+        const clearBoardButton = document.getElementById('clearBoardButton');
+        clearBoardButton.addEventListener('click', () => {
+            this.clearBoard(); // Llama a la función para limpiar el tablero
+            this.updateBoard(); // Actualiza el tablero visualmente
+
+            // Añadir animación de balanceo al ícono del cepillo
+            const brushIcon = clearBoardButton.querySelector('i');
+            brushIcon.style.animation = 'pendulum 1s';
+
+            // Remover la animación después de 0.5 segundo
+            setTimeout(() => {
+                brushIcon.style.animation = '';
+            }, 500); 
+        });
     }
 
+    // Método para limpiar el tablero
+    clearBoard() {
+        for (let y = 0; y < this.game.rows; y++) {
+            for (let x = 0; x < this.game.cols; x++) {
+                this.game.board[y][x] = false; // Pone todas las celdas como muertas
+            }
+        }
+    }
     // Método para establecer la velocidad de reproducción
     setSpeed(speed) {
         switch (speed) {

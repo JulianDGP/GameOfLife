@@ -40,6 +40,15 @@ td {
     transition: .3s;
 }
 
+#clearBoardButton {
+    bottom: 160px; /* Mover el botón hacia arriba para dejar espacio para el botón siguiente generación */
+}
+
+#clearBoardButton i {
+    display: inline-block;
+    transform: rotate(180deg); /* Rotar el ícono del cepillo */
+}
+
 #nextGenerationButton {
     bottom: 80px; /* Mover el botón hacia arriba para dejar espacio para el segundo botón */
 }
@@ -51,6 +60,18 @@ td {
 /* .botonF1:hover span, .botonF1:hover i {
     transform: rotate(360deg);
 } */
+ 
+@keyframes pendulum {
+    0% { transform: rotate(180deg) rotate(-20deg); }
+    12.5% { transform: rotate(180deg) rotate(20deg); }
+    25% { transform: rotate(180deg) rotate(-20deg); }
+    37.5% { transform: rotate(180deg) rotate(20deg); }
+    50% { transform: rotate(180deg) rotate(-20deg); }
+    62.5% { transform: rotate(180deg) rotate(20deg); }
+    75% { transform: rotate(180deg) rotate(-20deg); }
+    87.5% { transform: rotate(180deg) rotate(20deg); }
+    100% { transform: rotate(180deg) rotate(-20deg); }
+}
 
 .botonF1:active {
     transform: scale(1.4);
