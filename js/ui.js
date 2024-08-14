@@ -5,7 +5,7 @@ export class UI {
         this.container = document.getElementById(containerId); // Contenedor del tablero
         this.isPlaying = false; // Estado de la reproducción automática
         this.intervalId = null; // ID del intervalo de reproducción
-        this.speed = 1000; // Velocidad inicial (ms)
+        this.speed = 800; // Velocidad inicial (ms)
         this.initBoard(); // Inicializar el tablero
         this.addEventListeners();// Agregar los eventos
     }
@@ -116,16 +116,16 @@ export class UI {
     setSpeed(speed) {
         switch (speed) {
             case 'x1':
-                this.speed = 1000;
+                this.speed = 800;
                 break;
             case 'x2':
-                this.speed = 500;
+                this.speed = 400;
                 break;
             case 'x3':
-                this.speed = 250;
+                this.speed = 200;
                 break;
             case 'x4':
-                this.speed = 125;
+                this.speed = 100;
                 break;
         }
 
